@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  nginx:
+    container_name: nginx
+    image: nginx:1.17.8
+    ports:
+      - "80:80"
+    network_mode: bridge
+  hellonginxdemo:
+    container_name: hellonginxdemo
+    image: nginxdemos/hello:latest
+    ports:
+      - "81:80"
+    network_mode: bridge
+  httpd:
+    container_name: httpd
+    image: centos/httpd-24-centos7:2.4
+    ports:
+      - "82:8080"
+    network_mode: bridge
+  hello-world-rancher:
+    container_name: hello-world-rancher
+    image: rancher/hello-world:latest
+    ports:
+      - "83:80"
+    network_mode: bridge
