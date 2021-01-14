@@ -10,22 +10,29 @@ services:
       - ./content:/usr/share/nginx/html
       - ./nginx/conf.d:/etc/nginx/conf.d
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
-    network_mode: bridge
+    networks:
+      - net_demo
   hellonginxdemo:
     container_name: hellonginxdemo
     image: nginxdemos/hello:latest
-    ports:
-      - "81:80"
-    network_mode: bridge
+    expose:
+      - "80"
+    networks:
+      - net_demo
   httpd:
     container_name: httpd
     image: centos/httpd-24-centos7:2.4
-    ports:
-      - "82:8080"
-    network_mode: bridge
+    expose:
+      - "8080"
+    networks:
+      - net_demo
   hello-world-rancher:
     container_name: hello-world-rancher
     image: rancher/hello-world:latest
-    ports:
-      - "83:80"
-    network_mode: bridge
+    expose:
+      - "80"
+    networks:
+      - net_demo
+
+networks:
+  net_demo:
