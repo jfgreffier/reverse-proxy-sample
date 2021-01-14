@@ -39,7 +39,7 @@ Editer le fichier `/etc/hosts`, avec les droits administrateur, avec ce contenu 
 127.0.0.1 demo2.test.bzh
 127.0.0.1 demo3.test.bzh
 ```
-### tester les différents DNS :
+### Tester les différents DNS :
 
 * http://127.0.0.1 -> Page d'accueil
 * http://test.bzh -> Page d'accueil
