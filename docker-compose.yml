@@ -2,8 +2,8 @@ version: '3'
 
 services:
   nginx:
-    container_name: nginx:1.19.6
-    image: nginx:1.17.8
+    container_name: nginx
+    image: nginx:1.19.6
     ports:
       - "80:80"
     volumes:
@@ -12,19 +12,19 @@ services:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
     network_mode: bridge
   hellonginxdemo:
-    container_name: hellonginxdemo:latest
+    container_name: hellonginxdemo
     image: nginxdemos/hello:latest
     ports:
       - "81:80"
     network_mode: bridge
   httpd:
-    container_name: httpd:latest
+    container_name: httpd
     image: centos/httpd-24-centos7:2.4
     ports:
       - "82:8080"
     network_mode: bridge
   hello-world-rancher:
-    container_name: hello-world-rancher:latest
+    container_name: hello-world-rancher
     image: rancher/hello-world:latest
     ports:
       - "83:80"
